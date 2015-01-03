@@ -29,7 +29,7 @@ class SoftBody{
   // soft-body dynamics
   float organicConstant = 1;
   
-   SoftBody(float x, float y, float dx, float dy, float r, color col){
+   SoftBody(float x, float y, float dx, float dy, float r, color col, float _angle){
     //center shape in window
     centerX = x;
     centerY = y;
@@ -40,6 +40,7 @@ class SoftBody{
     startDistanceFromDestination = dist(startX, startY, destinationX, destinationY);
     radius = r;
     bodyColor = col;
+    rotAngle = _angle;
     // iniitalize frequencies for corner nodes
     for (int i=0; i<nodes; i++){
       frequency[i] = random(5, 12);

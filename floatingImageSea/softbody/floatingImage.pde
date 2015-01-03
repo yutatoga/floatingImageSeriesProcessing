@@ -13,7 +13,8 @@ final int SOFTBODY_NUMBER = 100;
 final int RADIUS_MIN = 10;
 final int RADIUS_MAX = 100;
 void setup() {
-  size(1920, 1280);
+//  size(1920, 1280);
+  size(displayWidth, displayHeight);
   noStroke();
   frameRate(30);
   list = new ArrayList<SoftBody>();
@@ -22,7 +23,7 @@ void setup() {
     float startY = random(0, displayHeight);
     float destinationX = linearToRadiate(startX, 0.000005);
     float destinationY = -2000;
-    list.add(new SoftBody(startX, startY, destinationX, destinationY, random(RADIUS_MIN, RADIUS_MAX), color(sliderR, sliderG, sliderB, sliderA)));
+    list.add(new SoftBody(startX, startY, destinationX, destinationY, random(RADIUS_MIN, RADIUS_MAX), color(sliderR, sliderG, sliderB, sliderA), random(0, 360)));
   }
   //s2 = new SoftBody(500, displayHeight-100, 25, color(255, 127, 255, 127));
   imageBackground = loadImage("image_background.jpg");
@@ -64,7 +65,7 @@ void inOrOut(ArrayList<SoftBody> listSoftBody){
       float startY = displayHeight+random(40, 200);
       float destinationX = linearToRadiate(startX, 0.000005);
       float destinationY = -2000;
-      list.add(new SoftBody(startX, startY, destinationX, destinationY, random(RADIUS_MIN, RADIUS_MAX), color(sliderR, sliderG, sliderB, sliderA)));
+      list.add(new SoftBody(startX, startY, destinationX, destinationY, random(RADIUS_MIN, RADIUS_MAX), color(sliderR, sliderG, sliderB, sliderA), random(0, 360)));
     }
   }
 }
